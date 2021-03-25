@@ -8,6 +8,9 @@ namespace Shop
 {
     class Help
     {
+        //Alex => данный метод переписать ни каких зацикленных вайлов
+
+        // why if? why not swich ?????
         public static void Service(IDictionary<Guid, Customer<string, string>> customers)
         {
             while (true)

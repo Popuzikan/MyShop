@@ -18,7 +18,7 @@ namespace Shop
                 {
                     if (comparison(products[i + 1], products[i]))
                     {
-                        Product<T> temp = products[i];
+                        Product<T> temp = products[i]; // Alex => зачем ты temp создешь каждый раз? когда заходишь в if "оптимизируй"
                         products[i] = products[i + 1];
                         products[i + 1] = temp;
                         swapped = true;

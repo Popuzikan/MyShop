@@ -13,15 +13,19 @@ namespace Shop
             Product<string>[] offeredProducts = {new Product<string>("продукты"), new Product<string>("товары для детей"),
                                                  new Product<string>("бытовые товары"), new Product<string>("товары для авто"),
                                                  new Product<string>("зоотовары"), new Product<string>("косметика"),
-                                                 new Product<string>("лекарства"), new Product<string>("одежда и обувь")};
+                                                 new Product<string>("лекарства"), new Product<string>("одежда и обувь")
+            };
 
             Console.WriteLine("список предлагаемых товаров:");
 
             for (int i = 0; i < offeredProducts.Length; i++)
                 Console.WriteLine(offeredProducts[i]);
 
+
             IDictionary<Guid, Customer<string, string>> customers = new Dictionary<Guid, Customer<string, string>>(10);
 
+            //Alex => суть что хотела сделать понятна но убери все и оптимизируй 
+            // сделай более удобным функционал, прописывать руками товар неудобно 
             var c1 = new Customer<string, string>("Антон", new Carts<string>(3, offeredProducts));
             var c2 = new Customer<string, string>("Кирилл", new Carts<string>(4, offeredProducts));
             var c3 = new Customer<string, string>("Анна", new Carts<string>(3, offeredProducts));
@@ -34,6 +38,8 @@ namespace Shop
             var c10 = new Customer<string, string>("Валентин", new Carts<string>(2, offeredProducts));
 
 
+
+            // Alex => такие записи недопустимы, автоматизируй добаление придумай функционал.
             customers[c1.Code] = c1;
             customers[c2.Code] = c2;
             customers[c3.Code] = c3;
@@ -48,7 +54,7 @@ namespace Shop
 
             Help.Service(customers);
 
-
+            // Исправь все что будет не понятно пиши! дорабатывай!
 
 
             Console.ReadKey();
