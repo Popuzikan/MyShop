@@ -26,7 +26,7 @@ namespace Shop
             Console.WriteLine();
         }
 
-        public bool Equals(Customer<R, T> other)
+        public bool Equals(Customer<R, T> other) // Метод икулэлс
         {
             if (other == null)
                 return false;
