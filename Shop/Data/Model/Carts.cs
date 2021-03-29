@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
+    // Alex => зачем он тут?????????
     delegate void MyDelegate<T>(Product<T>[] products);
 
     public class Carts<T> : ICart<T>
@@ -16,16 +17,16 @@ namespace Shop
         {
             Cart = new Product<T>[size];
 
+
+            // Alex мне не нравится как ты добавляешь товар для покупателя совсем принципе не пхохо по не вводить его руками, хотябы 1.2.3
             Console.WriteLine($"Введите {size} товаров для покупателя:");
 
             for (int i = 0; i < size; i++)
             {
                 string inPut = Console.ReadLine();
                 for (int j = 0; j < offeredProducts.Length; j++)
-                {
-                    if (inPut as dynamic == offeredProducts[j].Category)
-                        Cart[i] = new Product<T>(inPut as dynamic);
-                }
+                     if (inPut as dynamic == offeredProducts[j].Category)
+                         Cart[i] = new Product<T>(inPut as dynamic);
             }
 
             ProductSorter.Sort<T>(Cart, Product<T>.CompareCategory);
